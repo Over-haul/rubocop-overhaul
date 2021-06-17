@@ -1,0 +1,17 @@
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/AnyInstance:
+  Enabled: false
+
+RSpec/PredicateMatcher:
+  Strict: true
+
+RSpec/MessageSpies:
+  Enabled: false

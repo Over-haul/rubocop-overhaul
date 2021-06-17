@@ -1,0 +1,105 @@
+inherit_mode:
+  merge:
+  - Exclude
+  - Include
+
+AllCops:
+  NewCops: enable
+
+Bundler/DuplicatedGem:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/LambdaCall:
+  EnforcedStyle: braces
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+
+# can I remove?
+Style/BlockComments:
+  Enabled: false
+
+Style/NegatedIf:
+  Enabled: false
+
+# can I remove?
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+# can we talk about it?
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
+
+# can I remove it?
+Style/NumericPredicate:
+  Enabled: false
+
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/EmptyLinesAroundAccessModifier:
+  EnforcedStyle: around
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineAssignmentLayout:
+  EnforcedStyle: same_line
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+# can remove it?
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallBraceLayout:
+  EnforcedStyle: new_line
+
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/ClassLength:
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/MethodLength:
+  Max: 15
+  CountAsOne: ['array', 'heredoc', 'hash']
+  Exclude:
+    - spec/**/*.rb
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Lint/UnderscorePrefixedVariableName:
+  AllowKeywordBlockArguments: true
