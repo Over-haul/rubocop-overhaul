@@ -18,9 +18,6 @@ Style/Lambda:
 Style/LambdaCall:
   EnforcedStyle: braces
 
-Style/ClassAndModuleChildren:
-  EnforcedStyle: nested
-
 # can I remove?
 Style/BlockComments:
   Enabled: false
@@ -43,16 +40,11 @@ Style/Semicolon:
 Style/NumericPredicate:
   Enabled: false
 
-Layout/IndentationWidth:
-  Enabled: true
-
-Layout/EmptyLinesAroundAccessModifier:
-  EnforcedStyle: around
-
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
 Layout/MultilineAssignmentLayout:
+  Enabled: true
   EnforcedStyle: same_line
 
 Layout/IndentationConsistency:
@@ -76,9 +68,6 @@ Layout/ArgumentAlignment:
 
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
-
-Layout/LineLength:
-  Max: 120
 
 Metrics/ClassLength:
   Exclude:
