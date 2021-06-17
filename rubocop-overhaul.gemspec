@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "rubocop-overhaul"
-  spec.version       = 0.0.1
+  spec.version       = "0.0.1"
   spec.authors       = ["Overhaul"]
   spec.email         = ["gems@over-haul.com"]
 
@@ -11,11 +11,10 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.metadata = {
-    "source_code_uri" => "https://github.com/Overhaul/ruby-style"
-    "allowed_push_host" => "https://rubygems.org"
+    "allowed_push_host" => "https://rubygems.pkg.github.com/Over-haul"
   }
 
-  spec.files = ["rubucop.yml"]
+  spec.files = %w[rubocop.yml rubocop-rspec.yml]
 
   spec.add_dependency "rubocop", "~> 1.0"
 end
