@@ -4,6 +4,7 @@ inherit_mode:
   - Include
 
 AllCops:
+  TargetRubyVersion: <%= File.read('.ruby-version').strip %>
   NewCops: enable
 
 Bundler/DuplicatedGem:
