@@ -32,10 +32,6 @@ Style/IfUnlessModifier:
 Style/ParallelAssignment:
   Enabled: false
 
-# can we talk about it?
-Style/Semicolon:
-  AllowAsExpressionSeparator: true
-
 # can I remove it?
 Style/NumericPredicate:
   Enabled: false
