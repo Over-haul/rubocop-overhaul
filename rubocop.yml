@@ -88,3 +88,6 @@ Lint/AssignmentInCondition:
 
 Lint/UnderscorePrefixedVariableName:
   AllowKeywordBlockArguments: true
+
+Lint/EndAlignment:
+  EnforcedStyleAlignWith: variable

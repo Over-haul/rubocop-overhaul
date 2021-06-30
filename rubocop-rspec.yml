@@ -12,3 +12,9 @@ RSpec/AnyInstance:
 
 RSpec/MessageSpies:
   Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
+  Exclude:
+    - "spec/requests/**/*.rb"
+
