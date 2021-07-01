@@ -89,5 +89,5 @@ Lint/AssignmentInCondition:
 Lint/UnderscorePrefixedVariableName:
   AllowKeywordBlockArguments: true
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
