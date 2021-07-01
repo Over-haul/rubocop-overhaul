@@ -4,9 +4,21 @@ Base Rubocop configurations used at Overhaul.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add to your Gemfile:
 
 ```ruby
-gem 'rubocop'
-gem 'rubocop-overhaul'
+group :development
+  gem 'rubocop', require: false
+  gem 'rubocop-overhaul', require: false
+end
+```
+
+On your rubocop configuration:
+
+```yml
+inherit_gem:
+  rubocop-overhaul:
+    - rubocop.yml
+    - rubocop-rails.yml # optional
+    - rubocop-rspec.yml # optional
 ```
