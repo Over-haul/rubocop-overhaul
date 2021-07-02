@@ -1,3 +1,11 @@
+RSpec:
+  Enabled: true
+  Exclude:
+    - "spec/requests/**/*.rb"
+
+RSpec/NestedGroups:
+  Max: 5
+
 RSpec/MultipleExpectations:
   Enabled: false
 
@@ -12,8 +20,3 @@ RSpec/AnyInstance:
 
 RSpec/MessageSpies:
   Enabled: false
-
-RSpec:
-  Enabled: true
-  Exclude:
-    - "spec/requests/**/*.rb"

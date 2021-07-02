@@ -1,0 +1,3 @@
+Rails/SkipsModelValidations:
+  AllowedMethods:
+    - update_all
