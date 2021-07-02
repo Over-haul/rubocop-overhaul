@@ -4,19 +4,30 @@ RSpec:
     - "spec/requests/**/*.rb"
 
 RSpec/NestedGroups:
-  Max: 5
+  Max: 6
 
-RSpec/MultipleExpectations:
-  Enabled: false
+RSpec/MessageSpies:
+  EnforcedStyle: receive
 
-RSpec/NamedSubject:
+# - Relaxed cops -
+RSpec/ExampleLength:
+  Max: 30
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
+
+# - Disabled cops -
+RSpec/AnyInstance:
   Enabled: false
 
 RSpec/ContextWording:
   Enabled: false
 
-RSpec/AnyInstance:
+RSpec/MultipleExpectations:
   Enabled: false
 
 RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/NamedSubject:
   Enabled: false
