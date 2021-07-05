@@ -1,10 +1,7 @@
 RSpec:
   Enabled: true
   Exclude:
-    - "spec/requests/**/*.rb"
-
-RSpec/NestedGroups:
-  Max: 6
+    - "spec/requests/**/*.rb" # rswag uses a custom DSL on top of RSpec
 
 RSpec/MessageSpies:
   EnforcedStyle: receive
@@ -13,8 +10,8 @@ RSpec/MessageSpies:
 RSpec/ExampleLength:
   Max: 30
 
-RSpec/MultipleMemoizedHelpers:
-  Max: 10
+RSpec/NestedGroups:
+  Max: 6
 
 # - Disabled cops -
 RSpec/AnyInstance:
@@ -28,6 +25,9 @@ RSpec/MultipleExpectations:
 
 RSpec/MessageSpies:
   Enabled: false
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
 
 RSpec/NamedSubject:
   Enabled: false
