@@ -83,6 +83,9 @@ Metrics/MethodLength:
   Exclude:
     - spec/**/*.rb
 
+Naming/VariableNumber:
+  EnforcedStyle: snake_case
+
 Lint/AssignmentInCondition:
   Enabled: false
 
