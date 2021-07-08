@@ -1,3 +1,7 @@
+# We do not plan to support db:rollback
+Rails/ReversibleMigration:
+  Enabled: false
+
 Rails/SkipsModelValidations:
   AllowedMethods:
     - update_all

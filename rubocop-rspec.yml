@@ -23,9 +23,6 @@ RSpec/ContextWording:
 RSpec/MultipleExpectations:
   Enabled: false
 
-RSpec/MessageSpies:
-  Enabled: false
-
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
 
