@@ -69,23 +69,26 @@ Layout/ArgumentAlignment:
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
-Metrics/ClassLength:
-  Exclude:
-    - spec/**/*.rb
+Metrics/AbcSize:
+  Max: 35
 
 Metrics/BlockLength:
   Exclude:
     - spec/**/*.rb
 
-Metrics/AbcSize:
+Metrics/ClassLength:
   Exclude:
     - spec/**/*.rb
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/PerceivedComplexity:
+  Max: 20
 
 Metrics/MethodLength:
   Max: 15
   CountAsOne: ['array', 'heredoc', 'hash']
-  Exclude:
-    - spec/**/*.rb
 
 Naming/VariableNumber:
   EnforcedStyle: snake_case
