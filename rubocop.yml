@@ -9,65 +9,52 @@ AllCops:
 Bundler/DuplicatedGem:
   Enabled: false
 
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
+Layout/ArgumentAlignment:
+  EnforcedStyle: with_fixed_indentation
 
-Style/Lambda:
-  EnforcedStyle: literal
+Layout/CaseIndentation:
+  EnforcedStyle: end
 
-Style/LambdaCall:
-  EnforcedStyle: braces
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
 
-# can I remove?
-Style/BlockComments:
-  Enabled: false
+Layout/FirstArgumentIndentation:
+  EnforcedStyle: consistent
 
-Style/Documentation:
-  Exclude:
-    - db/migrate/*
-
-Style/NegatedIf:
-  Enabled: false
-
-# can I remove?
-Style/IfUnlessModifier:
-  Enabled: false
-
-Style/ParallelAssignment:
-  Enabled: false
-
-# can I remove it?
-Style/NumericPredicate:
-  Enabled: false
-
-Layout/MultilineMethodCallIndentation:
-  EnforcedStyle: indented
-
-Layout/MultilineAssignmentLayout:
-  Enabled: true
-  EnforcedStyle: same_line
-
-Layout/IndentationConsistency:
-  EnforcedStyle: indented_internal_methods
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
 
 # can remove it?
 Layout/FirstMethodArgumentLineBreak:
   Enabled: true
 
-Layout/FirstArgumentIndentation:
-  EnforcedStyle: consistent
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
 
-Layout/MultilineOperationIndentation:
-  EnforcedStyle: indented
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+  EnforcedStyle: same_line
 
 Layout/MultilineMethodCallBraceLayout:
   EnforcedStyle: new_line
 
-Layout/ArgumentAlignment:
-  EnforcedStyle: with_fixed_indentation
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
 
-Layout/FirstArrayElementIndentation:
-  EnforcedStyle: consistent
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+# Incompatible with RSpec idioms
+# https://github.com/rubocop/rubocop/issues/4222
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Lint/UnderscorePrefixedVariableName:
+  AllowKeywordBlockArguments: true
 
 Metrics/AbcSize:
   Max: 35
@@ -93,17 +80,33 @@ Metrics/MethodLength:
 Naming/VariableNumber:
   EnforcedStyle: snake_case
 
-# Incompatible with RSpec idioms
-# https://github.com/rubocop/rubocop/issues/4222
-Lint/AmbiguousBlockAssociation:
-  Exclude:
-    - spec/**/*
-
-Lint/AssignmentInCondition:
+# can I remove?
+Style/BlockComments:
   Enabled: false
 
-Lint/UnderscorePrefixedVariableName:
-  AllowKeywordBlockArguments: true
+Style/Documentation:
+  Exclude:
+    - db/migrate/*
 
-Layout/EndAlignment:
-  EnforcedStyleAlignWith: variable
+# can I remove?
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Style/LambdaCall:
+  EnforcedStyle: braces
+
+Style/NegatedIf:
+  Enabled: false
+
+# can I remove it?
+Style/NumericPredicate:
+  Enabled: false
+
+Style/ParallelAssignment:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
