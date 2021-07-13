@@ -90,6 +90,12 @@ Metrics/MethodLength:
 Naming/VariableNumber:
   EnforcedStyle: snake_case
 
+# Incompatible with RSpec idioms
+# https://github.com/rubocop/rubocop/issues/4222
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
 Lint/AssignmentInCondition:
   Enabled: false
 
