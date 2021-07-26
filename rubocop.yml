@@ -24,9 +24,11 @@ Layout/FirstArgumentIndentation:
 Layout/FirstArrayElementIndentation:
   EnforcedStyle: consistent
 
-# can remove it?
 Layout/FirstMethodArgumentLineBreak:
   Enabled: true
+  Exclude:
+    - spec/**/*.rb
+    - test/**/*.rb
 
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
@@ -37,6 +39,9 @@ Layout/MultilineAssignmentLayout:
 
 Layout/MultilineMethodCallBraceLayout:
   EnforcedStyle: new_line
+  Exclude:
+    - spec/**/*.rb
+    - test/**/*.rb
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
