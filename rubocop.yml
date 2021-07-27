@@ -93,6 +93,9 @@ Style/Documentation:
   Exclude:
     - db/migrate/*
 
+Style/FormatStringToken:
+  EnforcedStyle: template
+
 # can I remove?
 Style/IfUnlessModifier:
   Enabled: false
