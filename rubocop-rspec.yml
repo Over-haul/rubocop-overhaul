@@ -6,6 +6,9 @@ RSpec:
 RSpec/MessageSpies:
   EnforcedStyle: receive
 
+RSpec/ExampleWithoutDescription:
+  EnforcedStyle: single_line_only
+
 # - Relaxed cops -
 RSpec/ExampleLength:
   Max: 30
