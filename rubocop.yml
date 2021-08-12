@@ -89,6 +89,11 @@ Naming/VariableNumber:
 Style/BlockComments:
   Enabled: false
 
+Style/BlockDelimiters:
+  IgnoredMethods:
+    - lambda
+    - proc
+
 Style/Documentation:
   Exclude:
     - db/migrate/*
