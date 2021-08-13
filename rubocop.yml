@@ -84,6 +84,8 @@ Metrics/MethodLength:
 
 Naming/VariableNumber:
   EnforcedStyle: snake_case
+  Exclude:
+    - "**/config/routes.rb"
 
 # can I remove?
 Style/BlockComments:
