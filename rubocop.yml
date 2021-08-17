@@ -97,8 +97,7 @@ Style/BlockDelimiters:
     - proc
 
 Style/Documentation:
-  Exclude:
-    - db/migrate/*
+  Enabled: false
 
 Style/FormatStringToken:
   EnforcedStyle: template
