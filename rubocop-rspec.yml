@@ -1,7 +1,13 @@
+inherit_from: rubocop-rswag.yml
+
+# This option will tell rubocop to merge the exclude of multiple definitions.
+# Check: https://docs.rubocop.org/rubocop/configuration.html#merging-arrays-using-inherit_mode
+inherit_mode:
+  merge:
+    - Exclude
+
 RSpec:
   Enabled: true
-  Exclude:
-    - "spec/requests/**/*.rb" # rswag uses a custom DSL on top of RSpec
 
 RSpec/MessageSpies:
   EnforcedStyle: receive
