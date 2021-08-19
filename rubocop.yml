@@ -127,3 +127,6 @@ Style/StringLiterals:
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
+
+Style/SymbolProc:
+  AllowMethodsWithArguments: true
