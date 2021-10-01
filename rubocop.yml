@@ -68,6 +68,7 @@ Metrics/AbcSize:
 
 Metrics/BlockLength:
   Exclude:
+    - Gemfile
     - spec/**/*.rb
 
 Metrics/ClassLength:
