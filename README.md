@@ -9,7 +9,7 @@ Add to your Gemfile:
 ```ruby
 group :development
   gem 'rubocop', require: false
-  gem 'rubocop-overhaul', require: false
+  gem "rubocop-overhaul", github: "Over-haul/rubocop-overhaul", require: false
 end
 ```
 
