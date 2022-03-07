@@ -8,7 +8,6 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Overhaul's base styleguide"
   spec.description   = "Gem containing Overhaul's base rubocop configurations"
-  spec.license       = "MIT"
 
   spec.metadata = {
     "allowed_push_host" => "https://rubygems.pkg.github.com/Over-haul"
