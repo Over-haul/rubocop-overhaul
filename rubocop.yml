@@ -133,3 +133,6 @@ Style/StringLiteralsInInterpolation:
 
 Style/SymbolProc:
   AllowMethodsWithArguments: true
+
+Style/FetchEnvVar:
+  Enabled: false
