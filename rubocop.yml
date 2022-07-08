@@ -105,6 +105,9 @@ Style/Documentation:
 Style/FormatStringToken:
   EnforcedStyle: template
 
+Style/HashSyntax:
+  EnforcedShorthandSyntax: never
+
 # can I remove?
 Style/IfUnlessModifier:
   Enabled: false
