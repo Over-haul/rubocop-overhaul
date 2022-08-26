@@ -95,7 +95,7 @@ Style/BlockComments:
   Enabled: false
 
 Style/BlockDelimiters:
-  IgnoredMethods:
+  AllowedMethods:
     - lambda
     - proc
 
