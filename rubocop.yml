@@ -11,6 +11,9 @@ AllCops:
 Bundler/DuplicatedGem:
   Enabled: false
 
+HashSyntax:
+  EnforcedShorthandSyntax: never
+
 Layout/ArgumentAlignment:
   EnforcedStyle: with_fixed_indentation
 
