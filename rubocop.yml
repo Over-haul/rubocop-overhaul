@@ -11,7 +11,7 @@ AllCops:
 Bundler/DuplicatedGem:
   Enabled: false
 
-HashSyntax:
+Style/HashSyntax:
   EnforcedShorthandSyntax: never
 
 Layout/ArgumentAlignment:
