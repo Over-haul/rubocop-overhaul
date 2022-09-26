@@ -85,6 +85,9 @@ Metrics/MethodLength:
   Max: 15
   CountAsOne: ['array', 'heredoc', 'hash']
 
+Naming/BlockForwarding:
+  Enabled: false
+
 Naming/VariableNumber:
   EnforcedStyle: snake_case
   Exclude:
