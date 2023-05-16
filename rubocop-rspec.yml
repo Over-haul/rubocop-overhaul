@@ -37,3 +37,6 @@ RSpec/MultipleMemoizedHelpers:
 
 RSpec/NamedSubject:
   Enabled: false
+
+RSpec/IndexedLet:
+  Enabled: false
