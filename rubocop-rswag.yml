@@ -131,7 +131,11 @@ RSpec/ExpectOutput:
   Exclude:
     - "spec/requests/**/*.rb"
 
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
+  Exclude:
+    - "spec/requests/**/*.rb"
+
+RSpec/SpecFilePathSuffix:
   Exclude:
     - "spec/requests/**/*.rb"
 
