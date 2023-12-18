@@ -1,0 +1,55 @@
+name: Publish gem
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish_gem:
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+      - name: Get gem version
+        shell: bash
+        id: gem-meta
+        run: |
+          meta="$(ruby -e "spec = Gem::Specification.load(Dir['*.gemspec'].first); puts [spec.name, spec.version]")"
+          {
+            echo "name=$(echo "$meta" | head -n1)"
+            echo "version=$(echo "$meta" | tail -n1)"
+          } >> "${GITHUB_OUTPUT}"
+      - name: Prepare package registry credentials
+        run: |
+          mkdir ~/.gem
+          touch ~/.gem/credentials
+          chmod 600 ~/.gem/credentials
+          echo ":github: Bearer ${GITHUB_TOKEN}" >> ~/.gem/credentials
+      - name: Check version availability (package registry and git repository)
+        run: |
+          api_url='${{ github.api_url }}/orgs/${{ github.repository_owner }}/packages/rubygems/${{ github.event.repository.name }}/versions'
+
+          ! gh api --paginate "${api_url}" | jq --arg version_name "$VERSION_NAME" --exit-status '.[] | select(.name == $version_name)'
+          ! git tag | grep "v${VERSION_NAME}"
+          ! gh release view "v${VERSION_NAME}" 2>/dev/null
+        env:
+          VERSION_NAME: ${{ steps.gem-meta.outputs.version }}
+      # NOTE: it's much faster to use setup-ruby + this inline script than a dockerized action
+      - name: Build and publish gem to GitHub Packages
+        id: publish-gem-github
+        shell: bash
+        run: |
+          echo "::group::Building the gem"
+          find . -name '*.gemspec' -maxdepth 1 -exec gem build {} \;
+          echo "::endgroup::"
+          echo "::group::Pushing the built gem to GitHub Package Registry"
+          find . -name '*.gem' -maxdepth 1 -print0 | xargs -0 gem push --key github --host "https://rubygems.pkg.github.com/${{ github.repository_owner }}"
+          echo "::endgroup::"
+          echo "::notice ::Published gem ${{ steps.gem-meta.outputs.name }}, version ${{ steps.gem-meta.outputs.version }} to GitHub Packages"
+      - run: |
+          gh release create --target ${{ github.sha }} "${PRE_RELEASE_FLAG}" --generate-notes "${RELEASE_TAG}"
+        env:
+          RELEASE_TAG: v${{ steps.gem-meta.outputs.version }}
+          PRE_RELEASE_FLAG: ${{ github.ref_name == 'master' && '' || '--pre-release }}
