@@ -1,1 +1,7 @@
 ---
+Overhaul/MutableReformDefaults:
+  Description: Detect usage of mutable defaults within Reform objects defaults.
+  Enabled: true
+  Include:
+    app/concepts/**/*.rb
+  VersionAdded: '<<next>>'
