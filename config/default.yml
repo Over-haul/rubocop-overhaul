@@ -4,4 +4,8 @@ Overhaul/MutableReformDefaults:
   Enabled: true
   Include:
     app/concepts/**/*.rb
-  VersionAdded: '<<next>>'
+  VersionAdded: '0.0.1'
+Overhaul/AssignmentInsteadOfComparison:
+  Description: Detect enumerable comparison blocks returning an assignment.
+  Enabled: true
+  VersionAdded: '0.0.1'
