@@ -1,0 +1,17 @@
+require:
+  - rubocop-rspec
+
+inherit_from:
+  - ./oh_defaults/rubocop.yml
+  - ./oh_defaults/rubocop-rspec.yml
+
+AllCops:
+  TargetRubyVersion: 2.7
+
+Naming/FileName:
+ Exclude:
+   - lib/rubocop-overhaul.rb
+
+Naming/VariableNumber:
+  Enabled: true
+  EnforcedStyle: normalcase
