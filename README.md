@@ -9,7 +9,9 @@ Install the gem and add to the application's Gemfile by executing:
 ```ruby
 group :development
   gem 'rubocop', require: false
-  gem "rubocop-overhaul", github: "Over-haul/rubocop-overhaul", require: false
+  source "https://rubygems.pkg.github.com/Over-haul" do
+    gem "rubocop-overhaul", require: false
+  end
 end
 ```
 

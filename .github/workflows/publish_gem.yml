@@ -1,0 +1,60 @@
+name: Publish gem
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write # pushing tags, releases
+  packages: write # for uploading/deleting packages
+
+jobs:
+  publish_gem:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+      - name: Get gem version
+        shell: bash
+        id: gem-meta
+        run: |
+          meta="$(ruby -e "spec = Gem::Specification.load(Dir['*.gemspec'].first); puts [spec.name, spec.version]")"
+          {
+            echo "name=$(echo "$meta" | head -n1)"
+            echo "version=$(echo "$meta" | tail -n1)"
+          } >> "${GITHUB_OUTPUT}"
+      - name: Check version availability (package registry, git repository and GitHub release)
+        run: |
+          gh api --paginate "${VERSIONS_API}" | jq --arg version_name "$VERSION_NAME" --exit-status '.[] | select(.name == $version_name)' && \
+            echo "::error ::Package version already exists" && exit 1 || true
+          git tag | grep "v${VERSION_NAME}" && echo "::error ::Git tag already exists" && exit 1 || true
+          gh release view "v${VERSION_NAME}" && echo "::error ::GitHub release already exists"  && exit 1 || true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSIONS_API: ${{ github.api_url }}/orgs/${{ github.repository_owner }}/packages/rubygems/${{ github.event.repository.name }}/versions
+          VERSION_NAME: ${{ steps.gem-meta.outputs.version }}
+      # NOTE: it's much faster to use setup-ruby + this inline script than a dockerized action
+      - name: Build and publish gem to GitHub Packages
+        id: publish-gem-github
+        shell: bash
+        run: |
+          echo "::group::Building the gem"
+          find . -name '*.gemspec' -maxdepth 1 -exec gem build {} \;
+          echo "::endgroup::"
+          echo "::group::Pushing the built gem to GitHub Package Registry"
+          mkdir ~/.gem
+          touch ~/.gem/credentials
+          chmod 600 ~/.gem/credentials
+          echo ":github: Bearer ${{ github.token }}" >> ~/.gem/credentials
+          find . -name '*.gem' -maxdepth 1 -print0 | xargs -0 gem push --key github --host "https://rubygems.pkg.github.com/${{ github.repository_owner }}"
+          rm -rf ~/.gem
+          echo "::endgroup::"
+          echo "::notice ::Published gem ${{ steps.gem-meta.outputs.name }}, version ${{ steps.gem-meta.outputs.version }} to GitHub Packages"
+      - run: gh release create "${RELEASE_TAG}" --target ${{ github.sha }} --generate-notes"${PRE_RELEASE_FLAG}"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: v${{ steps.gem-meta.outputs.version }}
+          PRE_RELEASE_FLAG: ${{ github.ref_name != 'master' && ' --prerelease' || '' }}
