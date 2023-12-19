@@ -24,7 +24,7 @@ module RuboCop
           :sort, :sort_by # sort
         ].freeze
 
-        # @!method search_method_calls?(node)
+        # @!method search_method_calls(node)
         def_node_matcher :search_method_calls, <<~PATTERN
           (block
             (call _ /#{RESTRICT_ENUM_METHODS.join("|")}/)
@@ -37,11 +37,16 @@ module RuboCop
           search_method_calls(node) do |value|
             value = value.first
             block_return_operation = value.begin_type? ? value.children.last : value
-            next unless block_return_operation.lvasgn_type?
 
-            add_offense(block_return_operation)
+            add_offense(block_return_operation) if assignment?(block_return_operation)
           end
         end
+
+        private
+
+          def assignment?(node)
+            node.lvasgn_type? || (node.call_type? && node.assignment_method?)
+          end
       end
     end
   end
