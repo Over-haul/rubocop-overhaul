@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
     "rubygems_mfa_required" => "true"
   }
 
-  spec.files = Dir["lib/**/*"] + Dir["oh_defaults/*"]
+  spec.files = Dir["{lib,config,oh_defaults}/**/*"]
 
   spec.add_dependency "rubocop", "~> 1.33"
 end
