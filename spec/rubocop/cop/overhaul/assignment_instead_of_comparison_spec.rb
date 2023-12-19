@@ -25,9 +25,11 @@ RSpec.describe RuboCop::Cop::Overhaul::AssignmentInsteadOfComparison, :config do
     context "when method is #{method}" do
       let(:method) { method }
 
+      it_behaves_like "block returning assignment", "x.type = 3"
       it_behaves_like "block returning assignment", "x = 3"
       it_behaves_like "block returning assignment", "var = 10; x = 3"
 
+      it_behaves_like "block returning comparison", "x.type == 3"
       it_behaves_like "block returning comparison", "x == 3"
       it_behaves_like "block returning comparison", "x = 3; a"
     end
