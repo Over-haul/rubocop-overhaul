@@ -9,3 +9,7 @@ Overhaul/AssignmentInsteadOfComparison:
   Description: Detect enumerable comparison blocks returning an assignment.
   Enabled: true
   VersionAdded: '0.0.1'
+Overhaul/SemanticLoggerContract:
+  Description: Detect logger usage incompatible with Semantic Logger
+  Enabled: true
+  VersionAdded: '0.0.1'
