@@ -21,5 +21,5 @@ Gem::Specification.new do |spec|
 
   spec.files = Dir["{lib,config,oh_defaults}/**/*"]
 
-  spec.add_dependency "rubocop", "~> 1.33"
+  spec.add_dependency "rubocop", "~> 1.40"
 end
