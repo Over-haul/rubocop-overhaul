@@ -15,6 +15,7 @@ RSpec:
     Examples:
       Regular:
         - run_test!
+        - test
         - test!
 
 RSpec/VariableName:
