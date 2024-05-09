@@ -1,0 +1,6 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence,
+# @Over-haul/be-core will be requested for
+# review when someone opens a pull request.
+
+* @Over-haul/be-core @Drowze @ybregey
