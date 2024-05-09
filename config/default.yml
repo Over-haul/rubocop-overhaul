@@ -9,3 +9,15 @@ Overhaul/AssignmentInsteadOfComparison:
   Description: Detect enumerable comparison blocks returning an assignment.
   Enabled: true
   VersionAdded: '0.0.1'
+Overhaul/FactoryBoundaries:
+  Description: Detect usage of factories outside where they are supposed to be
+  Enabled: false
+  VersionAdded: '0.0.1'
+  Include:
+    - spec/**/*_spec.rb
+  Factories: {}
+    # e.g.:
+    # apple:
+    #   - '**/food_service/**'
+    # car:
+    #   - '**/cars_service/**'
