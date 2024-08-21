@@ -7,7 +7,7 @@ Base Rubocop configurations and custom cops used at Overhaul.
 Install the gem and add to the application's Gemfile by executing:
 
 ```ruby
-group :development
+group :development do
   gem 'rubocop', require: false
   source "https://rubygems.pkg.github.com/Over-haul" do
     gem "rubocop-overhaul", require: false
@@ -22,6 +22,7 @@ inherit_gem:
     - oh_defaults/rubocop.yml
     - oh_defaults/rubocop-rails.yml # optional
     - oh_defaults/rubocop-rspec.yml # optional
+    - oh_defaults/rubocop-factory_bot.yml # optional
 ```
 
 ## Development
