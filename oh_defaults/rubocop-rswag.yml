@@ -29,3 +29,13 @@ RSpec/ExampleWithoutDescription:
 RSpec/RepeatedExampleGroupDescription:
   Exclude:
     - spec/requests/**/*.rb
+
+# avoid false-positive in case a factory defines an attribute named e.g. `response`
+RSpec/EmptyExampleGroup:
+  Exclude:
+    - spec/factories/**/*.rb
+
+# avoid false-positive in case a factory defines an attribute named e.g. `response`
+RSpec/MissingExampleGroupArgument:
+  Exclude:
+    - spec/factories/**/*.rb

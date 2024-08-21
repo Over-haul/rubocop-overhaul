@@ -53,7 +53,7 @@ jobs:
           rm -rf ~/.gem
           echo "::endgroup::"
           echo "::notice ::Published gem ${{ steps.gem-meta.outputs.name }}, version ${{ steps.gem-meta.outputs.version }} to GitHub Packages"
-      - run: gh release create "${RELEASE_TAG}" --target ${{ github.sha }} --generate-notes"${PRE_RELEASE_FLAG}"
+      - run: gh release create "${RELEASE_TAG}" --target ${{ github.sha }} --generate-notes ${PRE_RELEASE_FLAG}
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: v${{ steps.gem-meta.outputs.version }}

@@ -5,3 +5,10 @@ Rails/ReversibleMigration:
 Rails/SkipsModelValidations:
   AllowedMethods:
     - update_all
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - prod
+    - test
+    - production
