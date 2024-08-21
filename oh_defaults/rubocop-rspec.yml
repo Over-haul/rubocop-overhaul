@@ -40,3 +40,6 @@ RSpec/NamedSubject:
 
 RSpec/IndexedLet:
   Enabled: false
+
+RSpec/StubbedMock:
+  Enabled: false
