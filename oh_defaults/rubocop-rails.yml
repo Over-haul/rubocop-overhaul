@@ -12,3 +12,7 @@ Rails/UnknownEnv:
     - prod
     - test
     - production
+
+# conflicts with strong_migrations gem
+Rails/BulkChangeTable:
+  Enabled: false
