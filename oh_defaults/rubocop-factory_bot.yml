@@ -1,2 +1,4 @@
 FactoryBot/AssociationStyle:
   EnforcedStyle: explicit
+  NonImplicitAssociationMethodNames:
+    - trait # workaround false positive on empty traits
