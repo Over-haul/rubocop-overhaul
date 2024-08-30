@@ -22,6 +22,10 @@ RSpec/ExampleLength:
 RSpec/NestedGroups:
   Max: 6
 
+RSpec/DescribedClass:
+  Exclude:
+    - spec/models/**/*
+
 # - Disabled cops -
 RSpec/AnyInstance:
   Enabled: false
