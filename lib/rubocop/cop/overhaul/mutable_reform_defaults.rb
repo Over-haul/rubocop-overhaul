@@ -27,7 +27,7 @@ module RuboCop
       #     end
       #   end
       #
-      class MutableReformDefaults < RuboCop::Cop::Cop
+      class MutableReformDefaults < RuboCop::Cop::Base
         include FrozenStringLiteral
 
         MSG = "Do not use mutable objects as Reform property defaults"

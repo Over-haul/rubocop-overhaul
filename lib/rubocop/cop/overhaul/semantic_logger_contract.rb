@@ -15,7 +15,7 @@ module RuboCop
       # logger.info(message: "foo", error: StandardError.new)
       # logger.info(message: "foo", payload: {}, exception: StandardError.new)
       # logger.info("foo", {}, StandardError.new)
-      class SemanticLoggerContract < RuboCop::Cop::Cop
+      class SemanticLoggerContract < RuboCop::Cop::Base
         MSG = "Logger usage incompatible with SemanticLogger. `payload` cannot be used along with arbitrary keywords."
 
         RESTRICT_ON_SEND = %i[error warn info debug fatal].freeze
