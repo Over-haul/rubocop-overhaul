@@ -23,7 +23,7 @@ module RuboCop
         # @see
         # https://github.com/reidmorrison/semantic_logger/blob/v4.14.0/lib/semantic_logger/log.rb#L51-L54
         SEMANTIC_LOGGER_ALLOWED_KEYWORDS = %i[
-          message exception backtrace exception
+          message exception backtrace
           duration min_duration payload
           log_exception on_exception_level
           metric metric_amount dimensions
