@@ -13,7 +13,7 @@ module RuboCop
       #   # good
       #   my_array.select { |x| x == 4 }
       #
-      class AssignmentInsteadOfComparison < RuboCop::Cop::Cop
+      class AssignmentInsteadOfComparison < RuboCop::Cop::Base
         MSG = "Do not return an assignment from the block of an Enumerable's search method."
 
         RESTRICT_ENUM_METHODS = [
