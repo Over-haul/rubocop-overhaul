@@ -1,6 +1,6 @@
-# Rubocop::Overhaul
+# RuboCop::Overhaul
 
-Base Rubocop configurations and custom cops used at Overhaul.
+Base RuboCop configurations and custom cops used at Overhaul.
 
 ## Installation
 
@@ -17,6 +17,9 @@ end
 
 To enable our custom configuration:
 ```yml
+plugins:
+  - rubocop-overhaul
+
 inherit_gem:
   rubocop-overhaul:
     - oh_defaults/rubocop.yml

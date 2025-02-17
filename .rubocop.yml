@@ -1,5 +1,6 @@
-require:
+plugins:
   - rubocop-rspec
+  - rubocop-overhaul
 
 inherit_from:
   - ./oh_defaults/rubocop.yml
