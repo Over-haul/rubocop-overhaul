@@ -16,10 +16,12 @@ Gem::Specification.new do |spec|
     "source_code_uri" => "https://github.com/Over-haul/rubocop-overhaul",
     "github_repo" => "https://github.com/Over-haul/rubocop-overhaul",
     "allowed_push_host" => "https://rubygems.pkg.github.com/Over-haul",
-    "rubygems_mfa_required" => "true"
+    "rubygems_mfa_required" => "true",
+    "default_lint_roller_plugin" => "RuboCop::Overhaul::Plugin"
   }
 
   spec.files = Dir["{lib,config,oh_defaults}/**/*"]
 
-  spec.add_dependency "rubocop", "~> 1.40"
+  spec.add_dependency "lint_roller", "~> 1.1"
+  spec.add_dependency "rubocop", "~> 1.72", ">= 1.72.1"
 end
