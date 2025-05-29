@@ -90,17 +90,7 @@ Metrics/AbcSize:
   Max: 35
 
 Metrics/BlockLength:
-  Exclude:
-    - Gemfile
-    - config/environments/*
-    - lib/tasks/**/*
-    - config/routes.rb
-    - config/routes/*
-  AllowedMethods:
-    - refine
-    - configure
-    - setup
-    - class_methods
+  Enabled: false
 
 Metrics/ClassLength:
   Exclude:
