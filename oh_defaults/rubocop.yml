@@ -85,6 +85,7 @@ Lint/UnderscorePrefixedVariableName:
 Lint/UnreachableCode:
   Exclude:
     - app/concepts/**/operation/**/*
+    - app/concepts/**/operations/*
 
 Metrics/AbcSize:
   Max: 35
@@ -184,6 +185,7 @@ Style/RedundantSelf:
 Style/SignalException:
   Exclude:
     - app/concepts/**/operation/**/*
+    - app/concepts/**/operations/*
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
