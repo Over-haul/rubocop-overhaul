@@ -148,6 +148,9 @@ Style/Documentation:
 Style/FormatStringToken:
   EnforcedStyle: template
 
+Style/MutableConstant:
+  EnforcedStyle: strict
+
 Style/FrozenStringLiteralComment:
   Exclude:
     - '**/db/migrate/*'
