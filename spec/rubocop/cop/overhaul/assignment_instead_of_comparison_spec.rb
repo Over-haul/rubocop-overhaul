@@ -32,6 +32,7 @@ RSpec.describe RuboCop::Cop::Overhaul::AssignmentInsteadOfComparison, :config do
       it_behaves_like "block returning comparison", "x.type == 3"
       it_behaves_like "block returning comparison", "x == 3"
       it_behaves_like "block returning comparison", "x = 3; a"
+      it_behaves_like "block returning comparison", "" # empty block
     end
   end
 end
