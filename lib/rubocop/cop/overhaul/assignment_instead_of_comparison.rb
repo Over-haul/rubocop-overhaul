@@ -34,6 +34,8 @@ module RuboCop
         PATTERN
 
         def on_block(node)
+          return if node.body.nil? # empty block
+
           search_method_calls(node) do |value|
             value = value.first
             block_return_operation = value.begin_type? ? value.children.last : value
