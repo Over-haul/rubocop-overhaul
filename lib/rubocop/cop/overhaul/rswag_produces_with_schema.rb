@@ -66,7 +66,7 @@ module RuboCop
           return unless rswag_operation_block?(node)
           return if node.body.nil?
 
-          has_schema   = node.each_descendant(:block).any? do |blk|
+          has_schema = node.each_descendant(:block).any? do |blk|
             response_block?(blk) && blk.each_descendant(:send).any? { |s| has_schema_call?(s) }
           end
           has_produces = node.each_descendant(:send).any? { |child| has_produces_json_call?(child) }

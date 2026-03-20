@@ -41,7 +41,7 @@ module RuboCop
       #   end
       #
       class RswagDuplicateResponseStatus < RuboCop::Cop::Base
-        MSG = "Duplicate `response` block for status `%<status>s`. " \
+        MSG = "Duplicate `response` block for status `%{status}`. " \
               "Consolidate into a single `response` block and use context/describe blocks for different scenarios."
 
         # @!method rswag_operation_block?(node)
