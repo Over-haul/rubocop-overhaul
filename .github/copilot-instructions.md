@@ -5,11 +5,20 @@ This gem (`rubocop-overhaul`) provides Overhaul's shared RuboCop configurations 
 ## Commands
 
 ```bash
-bundle exec rake              # run full suite: specs + rubocop lint
-bundle exec rake spec         # run tests only
-bundle exec rake rubocop      # run lint only
-bundle exec rspec spec/rubocop/cop/overhaul/some_cop_spec.rb  # run a single spec file
-bundle exec rake new_cop[Overhaul/CopName]  # scaffold a new cop
+# Run all tests
+bundle exec rspec
+
+# Run a single spec file
+bundle exec rspec spec/rubocop/cop/overhaul/some_cop_spec.rb
+
+# Run a single example by line number
+bundle exec rspec spec/rubocop/cop/overhaul/some_cop_spec.rb:42
+
+# Run rubocop (linter)
+bundle exec rubocop
+
+# Scaffold a new cop
+bundle exec rake new_cop[Overhaul/CopName]
 ```
 
 ## Architecture
@@ -49,8 +58,8 @@ This generates the cop file, spec file, adds the `require` to `overhaul_cops.rb`
 
 ## Key Conventions
 
-- Every file starts with `# frozen_string_literal: true`
+- Every Ruby source and spec file starts with `# frozen_string_literal: true`
 - All custom cops live in the `RuboCop::Cop::Overhaul` module
 - Specs run in random order; do not rely on execution order
 - `rubocop-rspec >= 3.0` is required when consuming `oh_defaults/rubocop-rspec.yml` (enforced at load time in the entry point)
-- The gem is tested against Ruby 3.0–3.4 in CI, though `required_ruby_version` is `>= 2.7`
+- The gem is tested against Ruby 3.0–3.4 in CI
