@@ -11,21 +11,21 @@ jobs:
   publish_gem:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-tags: true
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.0'
+          ruby-version: '3.4'
       - name: Get gem version
-        shell: bash
+        shell: ruby -- {0}
         id: gem-meta
         run: |
-          meta="$(ruby -e "spec = Gem::Specification.load(Dir['*.gemspec'].first); puts [spec.name, spec.version]")"
-          {
-            echo "name=$(echo "$meta" | head -n1)"
-            echo "version=$(echo "$meta" | tail -n1)"
-          } >> "${GITHUB_OUTPUT}"
+          spec = Gem::Specification.load(Dir['*.gemspec'].first)
+          File.write(ENV['GITHUB_OUTPUT'], <<~EOF)
+            name=#{spec.name}
+            version=#{spec.version}
+          EOF
       - name: Check version availability (package registry, git repository and GitHub release)
         run: |
           gh api --paginate "${VERSIONS_API}" | jq --arg version_name "$VERSION_NAME" --exit-status '.[] | select(.name == $version_name)' && \

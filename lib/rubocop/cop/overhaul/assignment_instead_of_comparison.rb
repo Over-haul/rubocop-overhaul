@@ -27,7 +27,7 @@ module RuboCop
         # @!method search_method_calls(node)
         def_node_matcher :search_method_calls, <<~PATTERN
           (block
-            (call _ /#{RESTRICT_ENUM_METHODS.join("|")}/)
+            (call _ {#{RESTRICT_ENUM_METHODS.map(&:inspect).join(" ")}})
             (args ...)
             $...
           )
