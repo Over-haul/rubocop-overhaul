@@ -13,3 +13,7 @@ Overhaul/SemanticLoggerContract:
   Description: Detect logger usage incompatible with Semantic Logger
   Enabled: true
   VersionAdded: '0.0.1'
+Overhaul/IncludesExternalChain:
+  Description: Detect relation-mutating calls chained after `includes_external`.
+  Enabled: true
+  VersionAdded: '0.5.2'
