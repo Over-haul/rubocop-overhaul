@@ -3,3 +3,7 @@
 require_relative "overhaul/mutable_reform_defaults"
 require_relative "overhaul/assignment_instead_of_comparison"
 require_relative "overhaul/semantic_logger_contract"
+require_relative "overhaul/rswag_produces_with_schema"
+require_relative "overhaul/rswag_schema_with_produces"
+require_relative "overhaul/rswag_consumes_with_body_param"
+require_relative "overhaul/rswag_duplicate_response_status"
