@@ -1,32 +1,13 @@
-RSpec:
-  Language:
-    ExampleGroups:
-      Regular:
-        - path
-        - response
-        - get
-        - post
-        - patch
-        - put
-        - delete
-        - head
-        - options
-        - trace
-    Examples:
-      Regular:
-        - run_test!
-        - test
-        - test!
-
+# in rswag, request parameter values are defined using `let` and they must be
+# named after the parameter/header name, which may offend this cop. E.g.:
+# - let(:"portal_ids[]") - a common query parameter
+# - let(:"X-Some-Header") - headers commonly include dashes and uppercase letters
 RSpec/VariableName:
   Exclude:
     - spec/requests/**/*.rb
 
+# not compatible with rswag (`run_test!` always get flagged)
 RSpec/ExampleWithoutDescription:
-  Exclude:
-    - spec/requests/**/*.rb
-
-RSpec/RepeatedExampleGroupDescription:
   Exclude:
     - spec/requests/**/*.rb
 
