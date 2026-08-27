@@ -17,3 +17,12 @@ Overhaul/IncludesExternalChain:
   Description: Detect relation-mutating calls chained after `includes_external`.
   Enabled: true
   VersionAdded: '0.0.1'
+Overhaul/SampleInFactory:
+  Description: Detect `sample` usage in factories, which yields non-deterministic test data.
+  Enabled: true
+  Include:
+    - factories/**/*.rb
+    - spec/**/factories/**/*.rb
+    - test/**/factories/**/*.rb
+    - lib/**/factories/**/*.rb
+  VersionAdded: '0.0.1'
