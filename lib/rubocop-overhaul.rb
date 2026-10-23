@@ -5,6 +5,7 @@ require "rubocop"
 require_relative "rubocop/overhaul"
 require_relative "rubocop/overhaul/version"
 require_relative "rubocop/overhaul/plugin"
+require_relative "rubocop/overhaul/mutable_constant_deep_freeze"
 
 require_relative "rubocop/cop/overhaul_cops"
 
